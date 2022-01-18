@@ -5,7 +5,7 @@ def getComb(words,temp):
             return
         getComb.ans.append(temp)
         return
-    for i in words[0]:
+    for i in words[0]:           #take each letter in current word and pass rest list of words.
         getComb(words[1:],temp+i)
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
