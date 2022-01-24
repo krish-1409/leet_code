@@ -12,19 +12,12 @@ class Solution:
             return None
         dic = {node:Node(node.val)}
         queue = [node]
-        vis = [0 for _ in range(101)]
-        vis[1] = 1
+        
         while queue:
             curr = queue.pop(0)
-            vis[curr.val] = 1
             for i in curr.neighbors:
-                if vis[i.val]:
-                    continue
-                
                 if i not in dic:
                     dic[i] = Node(i.val)
+                    queue.append(i)
                 dic[curr].neighbors.append(dic[i])
-                dic[i].neighbors.append(dic[curr])
-                queue.append(i)
         return dic[node]
-                    
