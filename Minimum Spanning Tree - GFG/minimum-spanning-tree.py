@@ -15,7 +15,7 @@ class Solution:
                 mst[curr[2]] = 1
                 parent[curr[2]] = curr[1]
                 for i in adj[curr[2]]:
-                    if not mst[i[0]]:
+                    if mst[i[0]]==0:
                         heapq.heappush(getMin,[i[1],curr[2],i[0]])
         ans = 0
         for u in range(1,V):
