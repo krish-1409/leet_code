@@ -9,8 +9,7 @@ class Solution:
         for i in range(n):
             ref[ord(p[i])-ord('a')]+=1
             dic[ord(s[i])-ord('a')]+=1
-        print(ref)
-        m = len(s)
+        
         ans = []
         if dic==ref:
             ans.append(0)
@@ -19,7 +18,7 @@ class Solution:
         while j<m:
             dic[ord(s[i])-ord('a')]-=1
             dic[ord(s[j])-ord('a')]+=1
-            # print(dic,s[i],s[j])
+            
             if dic==ref:
                 ans.append(i+1)
             i+=1
