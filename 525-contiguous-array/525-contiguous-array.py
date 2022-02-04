@@ -15,6 +15,5 @@ class Solution:
                 if count not in dic:
                     dic[count] = i
                 else:
-                    print(i,count,dic[count])
                     ans = max(ans,i-dic[count])
         return ans
